@@ -93,10 +93,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="description" itemprop="description" content="Welcome to the website. I hope you enjoy it!"/>
 
 
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-07-07"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-07-07"/>
-  <meta name="article:author" content="Suvan Dommeti"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Polarizing words in media over time: Presence of Polarzing Words in Australian Media"/>
@@ -114,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","date","author"]}},"value":[{"type":"character","attributes":{},"value":["Presence of Polarzing Words in Australian Media"]},{"type":"character","attributes":{},"value":["Welcome to the website. I hope you enjoy it!\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["07/07/2022"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Suvan Dommeti"]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Presence of Polarzing Words in Australian Media"]},{"type":"character","attributes":{},"value":["Welcome to the website. I hope you enjoy it!\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2091,7 +2087,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Presence of Polarzing Words in Australian Media","description":"Welcome to the website. I hope you enjoy it!","authors":[{"author":"Suvan Dommeti","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-07T00:00:00.000-04:00","citationText":"Dommeti, 2022"}
+{"title":"Presence of Polarzing Words in Australian Media","description":"Welcome to the website. I hope you enjoy it!","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2120,20 +2116,43 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><p>Welcome to the website. I hope you enjoy it!</p></p>
 </div>
 
-<div class="d-byline">
-  
-  Suvan Dommeti
-  
-<br/>07/07/2022
-</div>
 
 <div class="d-article">
+<h2 id="introduction">Introduction</h2>
+<p>In this project I hope to investigate the presence of the word
+“protest” and “riot” in Australian media. After searching the web I
+found an data source containing article headline, content and publish
+date from the Australian Broadcasting Corporation or ABC.</p>
+<h2 id="importance">Importance</h2>
+<p>Its important to see if a news source is disproportionately using
+words like riot in their publications because its an indicator that
+their publications have some sort of bias.</p>
+<h2 id="presence-of-riot-and-protest-from-2003-to-2021">Presence of riot
+and protest from 2003 to 2021</h2>
+<p>I graphed the number of occurrences of each word during each year
+since 2003. This was done by grouping by year and summing the total
+number of occurrences per year. We can see the word protest in blue and
+the word riot in red.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/plot-1:%20years-1.png" width="624" /></p>
 </div>
+<h2 id="conclusion">Conclusion</h2>
+<p>We can see there is no clear trend in this graph. This allows us to
+assume that there has been no excessive use of either word by ABC.</p>
+<h2 id="presence-of-riot-and-protest-in-2021">Presence of riot and
+protest in 2021</h2>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/plot-1:%202021-1.png" width="624" /></p>
 </div>
+<h2 id="conclusion-1">Conclusion</h2>
+<p>Even as we analyze the specific year we can see that there is no
+trend. Although this is not definitive proof that this source is
+reliable, it gives the reader a little more trust.</p>
+<h2 id="source">Source</h2>
+<p>My Source of Data was from ABC-Australia *the link to download the
+data can be found at &lt;<a
+href="https://www.kaggle.com/datasets/therohk/million-headlines"
+class="uri">https://www.kaggle.com/datasets/therohk/million-headlines</a></p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
