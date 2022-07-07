@@ -1,12 +1,9 @@
 ---
-title: "Untitled"
+title: "scources"
 description: |
   A new article created using the Distill format.
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Suvan Dommeti
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -15,9 +12,8 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
-
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+My Source of Data was from ABC-Australia 
+*the link to download the data can be found at (insert link)
 
 
 

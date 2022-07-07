@@ -3,6 +3,8 @@ title: "Presence of Polarzing Words in Australian Media"
 description: |
   Welcome to the website. I hope you enjoy it!
 site: distill::distill_website
+date: 07/07/2022
+author: Suvan Dommeti
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +22,6 @@ library(tidyverse)
 search()
 ```
 
-
 ```{r reading csv, include=FALSE}
 
 data_abc <- read.csv("abcnews-date-text.csv")
@@ -29,9 +30,9 @@ data_abc <- read.csv("abcnews-date-text.csv")
 print(data_abc)
 ```
 
-
 ```{r plot-1: years}
 
+#plot 1 is in years and is displayed right here
 data_abc <- read.csv("abcnews-date-text.csv")
 
 data_abc |> 
@@ -51,8 +52,6 @@ data_abc |>
            subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews")  +
   theme(plot.title = element_text(face = "bold", size = 15),plot.subtitle = element_text(face = "italic"))
 ```
-
-
 
 ```{r plot-1: 2021}
 
@@ -78,4 +77,3 @@ data_abc |>
   theme(plot.title = element_text(face = "bold", size = 15),plot.subtitle = element_text(face = "italic"))
 
 ```
-
