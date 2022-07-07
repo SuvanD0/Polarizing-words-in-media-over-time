@@ -1,0 +1,81 @@
+---
+title: "Presence of Polarzing Words in Australian Media"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#Distill
+library(distill)
+
+# Display Libraries
+library(ggplot2)
+library(ggthemes)
+library(tidyverse)
+
+#Verification
+search()
+```
+
+
+```{r reading csv, include=FALSE}
+
+data_abc <- read.csv("abcnews-date-text.csv")
+
+#Viewing Data
+print(data_abc)
+```
+
+
+```{r plot-1: years}
+
+data_abc <- read.csv("abcnews-date-text.csv")
+
+data_abc |> 
+  mutate(riot = str_detect(headline_text, "riot")) |> 
+  mutate(protest = str_detect(headline_text, "protest")) |> 
+  filter(protest == TRUE | riot == TRUE)  |> 
+  mutate(protest = as.integer(protest), riot = as.integer(riot)) |> 
+  mutate(year = substr(publish_date, 1, 4)) |> 
+    group_by(year) |> 
+  mutate(num_riot = sum(riot)) |> 
+  mutate(num_protest = sum(protest)) |> 
+  ggplot(aes(year)) +
+      geom_point(aes(y = num_riot), color = "darkred") +
+      geom_point(aes(y = num_protest), color = "blue") +
+      theme_clean() +
+      labs(title = "Presence of 'riot' and 'protest' in Australian Media Over Time",
+           subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews")  +
+  theme(plot.title = element_text(face = "bold", size = 15),plot.subtitle = element_text(face = "italic"))
+```
+
+
+
+```{r plot-1: 2021}
+
+data_abc <- read.csv("abcnews-date-text.csv")
+
+data_abc |> 
+  mutate(riot = str_detect(headline_text, "riot")) |> 
+  mutate(protest = str_detect(headline_text, "protest")) |> 
+  filter(protest == TRUE | riot == TRUE)  |> 
+  mutate(protest = as.integer(protest), riot = as.integer(riot)) |> 
+  mutate(year = substr(publish_date, 1, 4)) |> 
+  mutate(month = substr(publish_date, 5, 6)) |> 
+  group_by(month) |> 
+  mutate(num_riot = sum(riot)) |> 
+  mutate(num_protest = sum(protest)) |> 
+  filter(year == "2021") |> 
+  ggplot(aes(month)) +
+      geom_point(aes(y = num_riot), color = "darkred") +
+      geom_point(aes(y = num_protest), color = "blue") +
+      theme_clean() +
+   labs(title = "Presence of 'riot' and 'protest' in Australian Media During 2021",
+           subtitle = "The word 'protest' still had a greater presence", x = "Month", y = "Apperence of Word", caption = "data: abcnews") +
+  theme(plot.title = element_text(face = "bold", size = 15),plot.subtitle = element_text(face = "italic"))
+
+```
+

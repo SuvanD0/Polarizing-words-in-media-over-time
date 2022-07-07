@@ -1,0 +1,37 @@
+---
+title: "Graph ABC - Polarizing Word"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+```
+
+```{r abc data set}
+data2 <- read.csv("abcnews-date-text.csv")
+
+data2 |> 
+  mutate(riot = str_detect(headline_text, "riot")) |> 
+  mutate(protest = str_detect(headline_text, "protest")) |> 
+  filter(protest == TRUE | riot == TRUE)  |> 
+  mutate(protest = as.integer(protest), riot = as.integer(riot)) |> 
+  mutate(year = substr(publish_date, 1, 4)) |> 
+  mutate(num_riot = sum(riot)) |> 
+  mutate(num_protest = sum(protest)) |> 
+  ggplot(aes(year)) +
+      geom_bar(aes(y = num_riot), color = "darkred") 
+   
+      
+
+    
+   
+```
+
+
+
+    
+
+

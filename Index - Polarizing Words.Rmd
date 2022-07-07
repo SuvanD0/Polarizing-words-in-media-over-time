@@ -1,0 +1,30 @@
+---
+title: 'Index - Polarizing Words'
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#Distill
+library(distill)
+
+# Display Libraries
+library(ggplot2)
+library(ggthemes)
+library(tidyverse)
+
+
+```
+
+```{r reading csv file}
+
+
+data2 <- read.csv("abcnews-date-text.csv")
+x_date1 <- as.Date(as.character(data2$publish_date), format = "%Y%m%d")
+
+print(data2)
+print(x_date1)
+```
+
