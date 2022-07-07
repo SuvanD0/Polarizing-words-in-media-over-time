@@ -1,16 +1,17 @@
 ---
 title: "Presence of Polarzing Words in Australian Media"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  By: Suvan Dommeti
 site: distill::distill_website
-
 ---
+
 ## Introduction
-In this project I hope to investigate the presence of the word "protest" and "riot" in Australian media. After searching the web I found an data source containing article headline, content and publish date from the Australian Broadcasting Corporation or ABC. 
+
+In this project I hope to investigate the presence of the word "protest" and "riot" in Australian media. After searching the web I found an data source containing article headline, content and publish date from the Australian Broadcasting Corporation or ABC.
 
 ## Importance
-Its important to see if a news source is disproportionately using words like riot in their publications because its an indicator that their publications have some sort of bias. 
 
+Its important to see if a news source is disproportionately using words like riot in their publications because its an indicator that their publications have some sort of bias. The goal of this project is to develop a method of identifying the number of times a keyword is present as well as displaying it. 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
@@ -35,6 +36,7 @@ print(data_abc)
 ```
 
 ## Presence of riot and protest from 2003 to 2021
+
 I graphed the number of occurrences of each word during each year since 2003. This was done by grouping by year and summing the total number of occurrences per year. We can see the word protest in blue and the word riot in red.
 
 ```{r plot-1: years}
@@ -59,11 +61,13 @@ data_abc |>
            subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews")  +
   theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic"))
 ```
+
 ## Conclusion
+
 We can see there is no clear trend in this graph. This allows us to assume that there has been no excessive use of either word by ABC.
 
-
 ## Presence of riot and protest in 2021
+
 ```{r plot-1: 2021}
 
 data_abc <- read.csv("abcnews-date-text.csv")
@@ -88,9 +92,11 @@ data_abc |>
   theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic"))
 
 ```
+
 ## Conclusion
-Even as we analyze the specific year we can see that there is no trend. Although this is not definitive proof that this source is reliable, it gives the reader a little more trust. 
+
+Even as we analyze the specific year we can see that there is no trend. Although this is not definitive proof that this source is reliable, it gives the reader a little more trust.
 
 ## Source
-My Source of Data was from ABC-Australia 
-*the link to download the data can be found at <https://www.kaggle.com/datasets/therohk/million-headlines
+
+My Source of Data was from ABC-Australia \*the link to download the data can be found at \<https://www.kaggle.com/datasets/therohk/million-headlines>
