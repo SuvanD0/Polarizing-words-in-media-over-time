@@ -1,7 +1,7 @@
 ---
 title: "Presence of Polarzing Words in Australian Media"
 description: |
-  By: Suvan Dommeti
+  Author: Suvan Dommeti
 site: distill::distill_website
 ---
 
@@ -22,6 +22,9 @@ library(distill)
 library(ggplot2)
 library(ggthemes)
 library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(rmarkdown)
 
 #Verification
 search()
@@ -32,18 +35,44 @@ search()
 data_abc <- read.csv("abcnews-date-text.csv")
 
 #Viewing Data
-print(data_abc)
+glimpse(data_abc)
 ```
+
+
+## Table
+
+First lets take a look at some of the headlines in Australian News. Its always smart to take a quick glance at your data before you use it incase there are any glaring problems. Lets also add columns to tell us if the word Riot or Protest is present within the headline
+
+```{r, table, layout="l-body-outset"}
+data_abc <- read.csv("abcnews-date-text.csv")
+  
+table <- (sample_n(data_abc, 100))
+
+table1 <- table |> 
+  arrange(publish_date) |> 
+  select(headline_text) |> 
+  mutate(riot = str_detect(headline_text, "riot")) |> 
+  mutate(protest = str_detect(headline_text, "protest")) 
+
+paged_table(table1)
+```
+
+Ok now that we took a look at our data, lets start graphing. To graph Categorical Data we need to first quantify our variables. To do this lets count the number of occurrences of "True" within each column. Once we have a number
+we can group by year.
+
+Now lets graph!
+
 
 ## Presence of riot and protest from 2003 to 2021
 
-I graphed the number of occurrences of each word during each year since 2003. This was done by grouping by year and summing the total number of occurrences per year. We can see the word protest in blue and the word riot in red.
+
 
 ```{r plot-1: years}
 
 #plot 1 is in years and is displayed right here
 data_abc <- read.csv("abcnews-date-text.csv")
 
+colors <- c("Riot" = "tomato", "Protest" = "skyblue")
 data_abc |> 
   mutate(riot = str_detect(headline_text, "riot")) |> 
   mutate(protest = str_detect(headline_text, "protest")) |> 
@@ -54,12 +83,13 @@ data_abc |>
   mutate(num_riot = sum(riot)) |> 
   mutate(num_protest = sum(protest)) |> 
   ggplot(aes(year)) +
-      geom_point(aes(y = num_riot), color = "darkred") +
-      geom_point(aes(y = num_protest), color = "blue") +
+      geom_point(aes(y = num_riot, color = "Riot")) +
+      geom_point(aes(y = num_protest, color = "Protest")) +
       theme_clean() +
       labs(title = "Presence of 'riot' and 'protest' in Australian Media Over Time",
-           subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews")  +
-  theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic"))
+           subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews", color = "Search Word" )  +
+      theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic")) +
+  scale_color_manual(values = colors)
 ```
 
 ## Conclusion
@@ -71,6 +101,8 @@ We can see there is no clear trend in this graph. This allows us to assume that 
 ```{r plot-1: 2021}
 
 data_abc <- read.csv("abcnews-date-text.csv")
+
+colors <- c("Riot" = "tomato", "Protest" = "skyblue")
 
 data_abc |> 
   mutate(riot = str_detect(headline_text, "riot")) |> 
@@ -84,13 +116,14 @@ data_abc |>
   mutate(num_protest = sum(protest)) |> 
   filter(year == "2021") |> 
   ggplot(aes(month)) +
-      geom_point(aes(y = num_riot), color = "darkred") +
-      geom_point(aes(y = num_protest), color = "blue") +
+      geom_point(aes(y = num_riot, color = "Riot")) +
+      geom_point(aes(y = num_protest, color = "Protest")) +
       theme_clean() +
-   labs(title = "Presence of 'riot' and 'protest' in Australian Media During 2021",
-           subtitle = "The word 'protest' still had a greater presence", x = "Month", y = "Apperence of Word", caption = "data: abcnews") +
-  theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic"))
-
+      labs(title = "Presence of 'riot' and 'protest' in Australian Media During 2021",
+           subtitle = "The word 'protest' still had a greater presence", 
+           x = "Month", y = "Apperence of Word", caption = "data: abcnews", color = "Search Word") +
+      theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic")) +
+      scale_color_manual(values = colors)
 ```
 
 ## Conclusion

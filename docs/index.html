@@ -90,27 +90,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Polarizing words in media over time: Presence of Polarzing Words in Australian Media</title>
 
-  <meta property="description" itemprop="description" content="By: Suvan Dommeti"/>
+  <meta property="description" itemprop="description" content="Author: Suvan Dommeti"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Polarizing words in media over time: Presence of Polarzing Words in Australian Media"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="By: Suvan Dommeti"/>
+  <meta property="og:description" content="Author: Suvan Dommeti"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Polarizing words in media over time"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Polarizing words in media over time: Presence of Polarzing Words in Australian Media"/>
-  <meta property="twitter:description" content="By: Suvan Dommeti"/>
+  <meta property="twitter:description" content="Author: Suvan Dommeti"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Presence of Polarzing Words in Australian Media"]},{"type":"character","attributes":{},"value":["By: Suvan Dommeti\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Presence of Polarzing Words in Australian Media"]},{"type":"character","attributes":{},"value":["Author: Suvan Dommeti\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2068,6 +2068,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+  <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2087,7 +2089,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Presence of Polarzing Words in Australian Media","description":"By: Suvan Dommeti","authors":[]}
+{"title":"Presence of Polarzing Words in Australian Media","description":"Author: Suvan Dommeti","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2100,7 +2102,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="sources.rmd">Scource</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2113,7 +2114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Presence of Polarzing Words in Australian Media</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>By: Suvan Dommeti</p></p>
+<p><p>Author: Suvan Dommeti</p></p>
 </div>
 
 
@@ -2129,12 +2130,25 @@ words like riot in their publications because its an indicator that
 their publications have some sort of bias. The goal of this project is
 to develop a method of identifying the number of times a keyword is
 present as well as displaying it.</p>
+<h2 id="table">Table</h2>
+<p>First lets take a look at some of the headlines in Australian News.
+Its always smart to take a quick glance at your data before you use it
+incase there are any glaring problems. Lets also add columns to tell us
+if the word Riot or Protest is present within the headline</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["headline_text"],"name":[1],"type":["chr"],"align":["left"]},{"label":["riot"],"name":[2],"type":["lgl"],"align":["right"]},{"label":["protest"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"probe begins into deaths of two prisoners in us","2":"FALSE","3":"FALSE"},{"1":"senator defends strength of fines for illegal","2":"FALSE","3":"FALSE"},{"1":"thunderbirds ready to start avellino","2":"FALSE","3":"FALSE"},{"1":"fed govt urged to boost regional uni funds","2":"FALSE","3":"FALSE"},{"1":"power station workers strike over pay rise claim","2":"FALSE","3":"FALSE"},{"1":"alcohol management changes fail to impress","2":"FALSE","3":"FALSE"},{"1":"aid workers return to chadian refugee camps","2":"FALSE","3":"FALSE"},{"1":"no explanation for korean blast reports us official","2":"FALSE","3":"FALSE"},{"1":"no asbestos risk at civic square site mayor","2":"FALSE","3":"FALSE"},{"1":"telstra targets wollongong with wireless internet","2":"FALSE","3":"FALSE"},{"1":"australia bird flu risk relatively low experts","2":"FALSE","3":"FALSE"},{"1":"glory scrape away victory","2":"FALSE","3":"FALSE"},{"1":"database helps police clean up crime","2":"FALSE","3":"FALSE"},{"1":"interstate eggs threatening sa market","2":"FALSE","3":"FALSE"},{"1":"karzai defends release of christian convert","2":"FALSE","3":"FALSE"},{"1":"regional victoria feeling high fuel prices impact","2":"FALSE","3":"FALSE"},{"1":"abetz hints at illegal fishing fight funds","2":"FALSE","3":"FALSE"},{"1":"lucas heights accident no threat","2":"FALSE","3":"FALSE"},{"1":"bangladesh name bashar captain until world cup","2":"FALSE","3":"FALSE"},{"1":"roar fall to united","2":"FALSE","3":"FALSE"},{"1":"howard drops vanstone in cabinet reshuffle","2":"FALSE","3":"FALSE"},{"1":"archbishops refuse sacrament to highlight split on","2":"FALSE","3":"FALSE"},{"1":"china bans solvent in toothpaste","2":"FALSE","3":"FALSE"},{"1":"einfeld to face committal hearing","2":"FALSE","3":"FALSE"},{"1":"mandorah ferry faces risk of running aground","2":"FALSE","3":"FALSE"},{"1":"accused drug trafficker in court","2":"FALSE","3":"FALSE"},{"1":"coniston heliport to be leased for five years","2":"FALSE","3":"FALSE"},{"1":"uma thurman stalker creepy obsessive","2":"FALSE","3":"FALSE"},{"1":"abattoir workers worried for jobs","2":"FALSE","3":"FALSE"},{"1":"police investigate abduction attempt","2":"FALSE","3":"FALSE"},{"1":"labor mp wants revenge for budget blocking","2":"FALSE","3":"FALSE"},{"1":"five dead 32 injured in philippine firework","2":"FALSE","3":"FALSE"},{"1":"thousands attend anzac day service in sydney","2":"FALSE","3":"FALSE"},{"1":"authorities move to unblock glenelg river mouth","2":"FALSE","3":"FALSE"},{"1":"car hits maryborough pedestrian","2":"FALSE","3":"FALSE"},{"1":"scott putting in on the green","2":"FALSE","3":"FALSE"},{"1":"a sneak peak of wa upper house renovations","2":"FALSE","3":"FALSE"},{"1":"coroner asked to probe holiday road deaths","2":"FALSE","3":"FALSE"},{"1":"kempsey council retains control of airport","2":"FALSE","3":"FALSE"},{"1":"brisbane should be proud of mining industry qrc","2":"FALSE","3":"FALSE"},{"1":"guilty verdict over party death","2":"FALSE","3":"FALSE"},{"1":"bank boss up beat about flood recovery","2":"FALSE","3":"FALSE"},{"1":"membrey accused talked about disposing of body","2":"FALSE","3":"FALSE"},{"1":"nsw coalition says regions wont miss out","2":"FALSE","3":"FALSE"},{"1":"former macquarie chairman dies aged 69","2":"FALSE","3":"FALSE"},{"1":"driver to front court over pursuit","2":"FALSE","3":"FALSE"},{"1":"fifa facing corruption tsunami","2":"FALSE","3":"FALSE"},{"1":"another horse tests positive to hendra","2":"FALSE","3":"FALSE"},{"1":"mckenna has positive spin on ablett injury","2":"FALSE","3":"FALSE"},{"1":"bio refinery a boost to sorghum farmers","2":"FALSE","3":"FALSE"},{"1":"serena strolls as dokic withdraws","2":"FALSE","3":"FALSE"},{"1":"windsor push for water mine protection","2":"FALSE","3":"FALSE"},{"1":"amla and de villiers put proteas on top","2":"FALSE","3":"FALSE"},{"1":"teens told swap bong for alternatives","2":"FALSE","3":"FALSE"},{"1":"crowd gathers for modern day space landing","2":"FALSE","3":"FALSE"},{"1":"new nt government sworn in","2":"FALSE","3":"FALSE"},{"1":"northern mariana shoots down fat tax","2":"FALSE","3":"FALSE"},{"1":"monday markets","2":"FALSE","3":"FALSE"},{"1":"fire alert moppity rd young","2":"FALSE","3":"FALSE"},{"1":"indonesian police accused of abusing suspects","2":"FALSE","3":"FALSE"},{"1":"upsetting apples cart more allegations of","2":"FALSE","3":"FALSE"},{"1":"olympic bond parachutist killed reports","2":"FALSE","3":"FALSE"},{"1":"forum to shine spotlight on indigenous health","2":"FALSE","3":"FALSE"},{"1":"man dead after melbourne stabbing","2":"FALSE","3":"FALSE"},{"1":"crusta closure","2":"FALSE","3":"FALSE"},{"1":"radio nationals fran kelly talks to greg hunt","2":"FALSE","3":"FALSE"},{"1":"the beat the week in music news","2":"FALSE","3":"FALSE"},{"1":"snapshot shows visitor numbers decline","2":"FALSE","3":"FALSE"},{"1":"thai junta leader asks nation to move on from coup","2":"FALSE","3":"FALSE"},{"1":"wa liberals call for fairer slice of gst carve up","2":"FALSE","3":"FALSE"},{"1":"cockle shells bermagui seafood research","2":"FALSE","3":"FALSE"},{"1":"wa completes rout of queensland as behrendoff fires","2":"FALSE","3":"FALSE"},{"1":"extended interview with barnaby joyce","2":"FALSE","3":"FALSE"},{"1":"replica gun at townsville army barracks","2":"FALSE","3":"FALSE"},{"1":"alice springs kids paint cattle","2":"FALSE","3":"FALSE"},{"1":"budget crisis could force png to seek international funds expert","2":"FALSE","3":"FALSE"},{"1":"industry on front foot media since learning from live export","2":"FALSE","3":"FALSE"},{"1":"criminal allon lacco accused of threatening lloyd rayney","2":"FALSE","3":"FALSE"},{"1":"perth stadium contract blow to wafc future","2":"FALSE","3":"FALSE"},{"1":"dan richards nuffield scholarship","2":"FALSE","3":"FALSE"},{"1":"fears about indigenous rangers program funding beyond 2018","2":"FALSE","3":"FALSE"},{"1":"youths who allegedly blackmailed men on dating apps denied bail","2":"FALSE","3":"FALSE"},{"1":"aflw dream fuels sudanese perth girl aker athoi on wa team bid","2":"FALSE","3":"FALSE"},{"1":"juric says he can fix the socceroos goal problem","2":"FALSE","3":"FALSE"},{"1":"riverfire lights up brisbanes sky","2":"FALSE","3":"FALSE"},{"1":"hobart psychiatrist urges mental health overhaul","2":"FALSE","3":"FALSE"},{"1":"entire neighbourhood covered in lava spewing from hawaii volcano","2":"FALSE","3":"FALSE"},{"1":"community concerned about police treatment broken hill","2":"FALSE","3":"FALSE"},{"1":"melbourne coach says fans are an extra man","2":"FALSE","3":"FALSE"},{"1":"cameron bancroft returns wa cricket after ball tampering ban","2":"FALSE","3":"FALSE"},{"1":"coffs harbour coast hotel is regional nsws most troubled","2":"FALSE","3":"FALSE"},{"1":"nsw police bias crime unit downgraded","2":"FALSE","3":"FALSE"},{"1":"kerryn phelps claims campaign posters taken down","2":"FALSE","3":"FALSE"},{"1":"outback didgeridoo sensation william barton returns to home town","2":"FALSE","3":"FALSE"},{"1":"base jumpers leap off perth cbd skyscraper exchange tower","2":"FALSE","3":"FALSE"},{"1":"northern territory coronavirus update impact on economy","2":"FALSE","3":"FALSE"},{"1":"nbn co misled canberrans over broadband switch","2":"FALSE","3":"FALSE"},{"1":"unemployment continues to rise amidst the economic","2":"FALSE","3":"FALSE"},{"1":"joe biden camp calls donald trump abhorrent kamala harris","2":"FALSE","3":"FALSE"},{"1":"sydney couple in extreme terror after samurai sword killing","2":"FALSE","3":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<p>Ok now that we took a look at our data, lets start graphing. To graph
+Categorical Data we need to first quantify our variables. To do this
+lets count the number of occurrences of “True” within each column. Once
+we have a number we can group by year.</p>
+<p>Now lets graph!</p>
 <h2 id="presence-of-riot-and-protest-from-2003-to-2021">Presence of riot
 and protest from 2003 to 2021</h2>
-<p>I graphed the number of occurrences of each word during each year
-since 2003. This was done by grouping by year and summing the total
-number of occurrences per year. We can see the word protest in blue and
-the word riot in red.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/plot-1:%20years-1.png" width="624" /></p>
 </div>

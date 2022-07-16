@@ -8,9 +8,11 @@ date: "`r Sys.Date()`"
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(dplyr)
+library(ggplot2)
+
 ```
 
-```{r abc data set}
+```{r abc data set - Yearly}
 data2 <- read.csv("abcnews-date-text.csv")
 
 data2 |> 
@@ -19,15 +21,42 @@ data2 |>
   filter(protest == TRUE | riot == TRUE)  |> 
   mutate(protest = as.integer(protest), riot = as.integer(riot)) |> 
   mutate(year = substr(publish_date, 1, 4)) |> 
+    group_by(year) |> 
   mutate(num_riot = sum(riot)) |> 
   mutate(num_protest = sum(protest)) |> 
   ggplot(aes(year)) +
-      geom_bar(aes(y = num_riot), color = "darkred") 
-   
-      
+      geom_point(aes(y = num_riot), color = "darkred") +
+      geom_point(aes(y = num_protest), color = "blue") +
+      theme_classic() +
+      labs(title = "Presence of 'riot' and 'protest' in Australian Media Over Time",
+           subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews")
+```
 
-    
-   
+
+```{r abc data set - 2021}
+
+data2 <- read.csv("abcnews-date-text.csv")
+
+data2 |> 
+  mutate(riot = str_detect(headline_text, "riot")) |> 
+  mutate(protest = str_detect(headline_text, "protest")) |> 
+  filter(protest == TRUE | riot == TRUE)  |> 
+  mutate(protest = as.integer(protest), riot = as.integer(riot)) |> 
+  mutate(year = substr(publish_date, 1, 4)) |> 
+  mutate(month = substr(publish_date, 5, 6)) |> 
+  group_by(month) |> 
+  mutate(num_riot = sum(riot)) |> 
+  mutate(num_protest = sum(protest)) |> 
+  filter(year == "2021") |> 
+  ggplot(aes(month)) +
+      geom_point(aes(y = num_riot), color = "darkred") +
+      geom_point(aes(y = num_protest), color = "blue") +
+      theme_classic() +
+   labs(title = "Presence of 'riot' and 'protest' in Australian Media During 2021",
+           subtitle = "The word 'protest' still had a greater presence", x = "Month", y = "Apperence of Word", caption = "data: abcnews") +
+  theme(plot.title = element_text(face = "bold", size = 15),plot.subtitle = element_text(face = "italic"))
+
+
 ```
 
 

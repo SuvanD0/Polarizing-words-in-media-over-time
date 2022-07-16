@@ -1,14 +1,12 @@
 name: "."
 title: "Polarizing words in media over time"
-description: |
-  Polarizing words in media over time
 output_dir: "docs"
 navbar:
   right:
     - text: "Home"
       href: index.html
+      theme: theme.css
     - text: "About"
       href: about.html
-    - text: "Scource"
-      href: sources.rmd
+      theme: theme.css
 output: distill::distill_article
