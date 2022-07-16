@@ -8,11 +8,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## About Me
-My name is **Suvan Dommeti** and Im an incoming Freshman at The Ohio State University
+My name is **Suvan Dommeti** and Im an incoming Freshman at The Ohio State University(OSU). I will be studying Computer Science and Economics as part of the Honors Program at OSU
 
 ## About the Project
 My project, *Presence of Polarzing Words in Australian Media*, explores the presence of a pair of words("protest" and "riot"). Many times in media these words are interchanged to achieve a certain message. I wanted to see whether there was a clear excessive use of either word in recent years by Australian media
 
-### Goals
- - To determine if either word was excessively used
- - Graph the presence of each word over years and also specifically in 2021

@@ -1,7 +1,7 @@
 ---
 title: "Presence of Polarzing Words in Australian Media"
 description: |
-  Author: Suvan Dommeti
+    Suvan Dommeti
 site: distill::distill_website
 ---
 
@@ -88,7 +88,8 @@ data_abc |>
       theme_clean() +
       labs(title = "Presence of 'riot' and 'protest' in Australian Media Over Time",
            subtitle = "The word 'protest' has always had a greater presence in media", x = "Year", y = "Apperence of Word", caption = "data: abcnews", color = "Search Word" )  +
-      theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic")) +
+      theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic"),
+            axis.text.x = element_text(angle = 90)) +
   scale_color_manual(values = colors)
 ```
 
@@ -120,9 +121,10 @@ data_abc |>
       geom_point(aes(y = num_protest, color = "Protest")) +
       theme_clean() +
       labs(title = "Presence of 'riot' and 'protest' in Australian Media During 2021",
-           subtitle = "The word 'protest' still had a greater presence", 
-           x = "Month", y = "Apperence of Word", caption = "data: abcnews", color = "Search Word") +
-      theme(plot.title = element_text(face = "bold", size = 10),plot.subtitle = element_text(face = "italic")) +
+            subtitle = "The word 'protest' still had a greater presence", 
+             x = "Month", y = "Apperence of Word", caption = "data: abcnews",              color = "Search Word") +
+      theme(plot.title = element_text(face = "bold", size = 10),
+              plot.subtitle = element_text(face = "italic")) +
       scale_color_manual(values = colors)
 ```
 
@@ -132,4 +134,4 @@ Even as we analyze the specific year we can see that there is no trend. Although
 
 ## Source
 
-My Source of Data was from ABC-Australia \*the link to download the data can be found at \<https://www.kaggle.com/datasets/therohk/million-headlines>
+My data was collected from ABC-Australia by Rohit Kulkarni. \*the link to download the data can be found at \<https://www.kaggle.com/datasets/therohk/million-headlines>
